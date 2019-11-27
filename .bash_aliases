@@ -1,0 +1,13 @@
+# here are my aliases
+alias lll='ls -lhaG'
+alias xt='xfce4-terminal'
+alias fb='sudo fb-messenger-cli'
+alias ap='cd /etc/apache2'
+alias wd='cd /var/www'
+alias y='sudo mpsyt'
+alias c='clear'
+alias q='exit'
+alias bq='exec bash'
+alias gc='git commit -m'
+alias gp='git push'
+alias gst='git status'
