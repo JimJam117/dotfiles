@@ -118,5 +118,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-echo Mabby  is  the  best! | figlet | cowsay -w -s -n
+##echo Mabby  is  the  best! | figlet | cowsay -w -s -n
 shopt -s expand_aliases
