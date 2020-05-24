@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $(ibus engine) == *"gb:extd"* ]]; then
+	ibus engine xkb:ru:phonetic:rus &
+	echo "going to russian"
+elif [[ $(ibus engine) == *"ru:phonetic"* ]]; then
+	ibus engine xkb:gb:extd:eng & 
+	echo "going to english"
+else
+	ibus engine xkb:gb:extd:eng &
+	echo "Setting default eng"
+fi
+

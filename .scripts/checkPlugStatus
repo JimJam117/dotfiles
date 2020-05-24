@@ -1,0 +1,27 @@
+#!/bin/bash
+#string="my strong"
+#if [[ $string == *"my"* ]]; then
+#	echo "woow2"
+#fi
+
+if [[ $(acpi) == *"100%"* ]]; then
+	val=""
+else
+	val="$(acpi | cut -d'%' -f 1 | tail -c -3)"
+fi
+
+
+
+if [[ $(acpi) == *Discharging* ]]; then
+	msg="🔋"
+elif [[ $(acpi) == *Charging* ]]; then
+	msg="⚡ "
+elif [[ $(acpi) == *"100%"* ]]; then 
+	msg="BTRY FULL, UNPLUG"
+else 
+	msg="UKN"
+fi
+
+echo "$msg $val%"
+
+#echo "wwowe"
