@@ -118,5 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+neofetch
 ##echo Mabby  is  the  best! | figlet | cowsay -w -s -n
 shopt -s expand_aliases
