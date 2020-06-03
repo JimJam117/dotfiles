@@ -25,7 +25,7 @@ NETBARS=$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $9}')
 
 #xsetroot -name " kybrd: $(checkIbusLang) | $(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))  | $(myDate) | Btry:$(myBattery)"
 vol="$(amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]')" 
-xsetroot -name " $NETNAME $NETBARS | $(checkIbusLang) | 🔈 $vol | $(myBattery) | $(tempCheck) | $(myDate)"
+xsetroot -name " $NETNAME $NETBARS | $(checkIbusLang) | 🔈 $vol | $(myBattery) | $(myDate) | $(curl wttr.in?format=1)"
 
 
 #expr length "$(nmcli dev wifi list)"

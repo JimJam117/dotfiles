@@ -16,8 +16,8 @@ if [[ $(acpi) == *Discharging* ]]; then
 	msg="🔋"
 	rem="[$(acpi | awk ' {print $5}' | cut -c 1-5)]"
 elif [[ $(acpi) == *Charging* ]]; then
-	msg="⚡ "
-	rem=" "
+	msg="⚡"
+	rem=""
 elif [[ $(acpi) == *"100%"* ]]; then 
 	msg="BTRY FULL, UNPLUG"
 else 

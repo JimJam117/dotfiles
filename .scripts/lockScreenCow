@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-echo -e "\nLocked at:  $(date "+%A %d %B %Y, %H:%M")\n\n Enter Password Pls :)\n" | cowsay -n &
+echo -e "\nLocked at:  $(date "+%A %d %B %Y, %H:%M")\n\n Screen will go red when incorrect password is\n entered or input is empty.\n Screen will go blue as you are entering the\n password.\n\n Enter Password Pls :)\n" | cowsay -n &
 	

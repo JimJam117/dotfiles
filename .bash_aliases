@@ -18,3 +18,8 @@ alias ba='vim ~/.bash_aliases'
 alias laravel='~/.composer/vendor/laravel/installer/bin/laravel'
 alias goto_hs='cd /home/mabby/Documents/Projects/homestead/homestead/'
 
+alias img='sxiv'
+alias radio-on='nmcli radio wifi on'
+alias radio-off='nmcli radio wifi off'
+alias slock-cow='slock -m "$(lockScreenCow)"'
+alias slc='slock -m "$(lockScreenCow)"'
