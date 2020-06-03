@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+echo -e "\nLocked at:  $(date "+%A %d %B %Y, %H:%M")\n\n Enter Password Pls :)\n" | cowsay -n &
+	

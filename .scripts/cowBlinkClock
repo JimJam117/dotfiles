@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true; do
+	clear &
+	echo -e "\n$(date "+%A %d %B %Y, %H:%M:%S")\n" | cowsay -n &
+	sleep 1s  
+
+	clear &
+	echo -e "\n$(date "+%A %d %B %Y, %H:%M:%S")\n" | cowsay -n -y &
+	sleep 1s  
+done

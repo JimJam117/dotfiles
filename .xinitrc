@@ -34,8 +34,10 @@ done &
 #exec compton
 xbindkeys &
 xwallpaper --zoom ~/.config/wallpaper.jpg &
+xrdb ~/.Xresources &
+setxkbmap -option caps:swapescape &
 exec ~/dwm/dwm &
-#exec compton 
+exec compton & 
 ibus-daemon 
 #exec xbindkeys
 

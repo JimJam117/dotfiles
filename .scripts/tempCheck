@@ -1,0 +1,7 @@
+#!/bin/bash	
+
+temp="$(acpi -t | awk '{print $4}' | cut -c 1-3)c"
+sts="$(acpi -t | awk '{print $3}')"
+
+echo "$sts $temp"
+

@@ -10,18 +10,20 @@ else
 	val="$(acpi | cut -d'%' -f 1 | tail -c -3)"
 fi
 
-
+rem=" "
 
 if [[ $(acpi) == *Discharging* ]]; then
 	msg="🔋"
+	rem="[$(acpi | awk ' {print $5}' | cut -c 1-5)]"
 elif [[ $(acpi) == *Charging* ]]; then
 	msg="⚡ "
+	rem=" "
 elif [[ $(acpi) == *"100%"* ]]; then 
 	msg="BTRY FULL, UNPLUG"
 else 
 	msg="UKN"
 fi
 
-echo "$msg $val%"
+echo "$msg$rem $val%"
 
 #echo "wwowe"

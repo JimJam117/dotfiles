@@ -16,10 +16,17 @@ myBattery(){
 
 #vol="$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))"
 #vol="$(amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]')"   
+NETNAME=$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $3}')
+NETBARS=$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $9}')
+
+
+#netlenc=$(nmcli dev wifi list | grep \* | cut -c27-50)
 
 
 #xsetroot -name " kybrd: $(checkIbusLang) | $(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))  | $(myDate) | Btry:$(myBattery)"
 vol="$(amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]')" 
-xsetroot -name " $(checkIbusLang) | 🔈 $vol | $(myBattery) | $(myDate)"
-			
-	
+xsetroot -name " $NETNAME $NETBARS | $(checkIbusLang) | 🔈 $vol | $(myBattery) | $(tempCheck) | $(myDate)"
+
+
+#expr length "$(nmcli dev wifi list)"
+
