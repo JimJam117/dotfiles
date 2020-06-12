@@ -46,7 +46,7 @@ xwallpaper --zoom ~/.config/wallpaper.jpg &
 xrdb ~/.Xresources &
 setxkbmap -option caps:swapescape &
 ibus-daemon -drx &
-exec ~/dwm/dwm 
+exec ~/suckless/dwm/dwm 
  
 #exec xbindkeys
 

@@ -124,7 +124,7 @@ fi
 
 ##neofetch --disable cpu gpu theme icons term wm shell --color_blocks off --ascii "$(cowsay -W 300 -w "$(curl -s wttr.in?n0Q)")" --gap -45
 
-neofetch --disable cpu gpu theme icons term wm shell --color_blocks off --colors 4 4 4 3 3 7 7 --package_managers  --ascii "$(cowsay -f apt "Jimjam $(date +''%I:%M:%S%p)")" && curl -s wttr.in?n0 && echo -e "\n"
+neofetch --disable cpu gpu theme icons term wm shell --color_blocks off --colors 4 4 4 3 3 7 7 --package_managers  --ascii "$(cowsay -f apt "Jimjam's X230")" && curl -s wttr.in?n0 && echo -e "\n"
 
 
 ###neofetch

@@ -6,6 +6,8 @@ elif [[ $(ibus engine) == *"ru"* ]]; then
 	echo "ru"
 elif [[ $(ibus engine) == *"gb"* ]]; then
 	echo "gb"
+elif [[ $(ibus engine) == *"pinyin"* ]]; then
+	echo "zh"
 else
 	echo "ukn"
 fi

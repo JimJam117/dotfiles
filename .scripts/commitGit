@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo git add .scripts &&
+sudo git add .bashrc &&
+sudo git add .bash_aliases &&
+sudo git add .xinitrc &&
+sudo git add .vimrc &&
+sudo git add .xinputrc &&
+sudo git status
