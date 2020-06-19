@@ -1,5 +1,7 @@
 # exec dwm
 
+
+
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus
@@ -7,7 +9,9 @@ export XIM_PROGRAM=/usr/bin/ibus-daemon
 
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="xim"
+#export QT_IM_MODULE="xim"
+export QT_IM_MODULE="ibus"
+
 
 #export GTK_IM_MODULE=fcitx 
 #export XMODIFIERS=@im=fcitx 
@@ -47,6 +51,14 @@ xrdb ~/.Xresources &
 setxkbmap -option caps:swapescape &
 ibus-daemon -drx &
 exec ~/suckless/dwm/dwm 
+
+xset +fp /usr/share/fonts
+xset fp rehash
+
+xset +fp /home/jimjam/.local/share/fonts
+xset fp rehash
+
+xautolock -time 15 -locker slc
  
 #exec xbindkeys
 

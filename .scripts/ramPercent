@@ -1,0 +1,9 @@
+#!/bin/bash
+
+raw="$(awk </proc/meminfo -F': *' '
+{ v[$1] = $2+0 }
+END{print 100 * ((v["MemTotal"]-v["MemFree"]-(v["Cached"]-v["Shmem"]+v["Buffers"]+v["SReclaimable"]))/1024)/(v["MemTotal"]/1024) 
+}')"
+
+
+echo -e "$(echo -e $raw | cut -d'.' -f 1)"

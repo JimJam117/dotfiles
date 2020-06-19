@@ -24,10 +24,11 @@ alias radio-off='nmcli radio wifi off'
 alias slock-cow='slock -m "$(lockScreenCow)"'
 alias slc='slock -m "$(lockScreenCow)"'
 alias weather='curl wttr.in?format=v2'
-alias ..='cd ..'
+alias n-weather='curl wttr.in?n'
 alias endx='killall xinit'
 alias xcom='~/games/openxcom/openxcom.AppImage'
 alias qt='qutebrowser'
 
 alias h='cd ~/'
 alias ..='cd ..'
+

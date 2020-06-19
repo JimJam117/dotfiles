@@ -1,8 +1,12 @@
 #!/bin/bash
 
 myDate(){
-	myDate="$(date +"%H:%M %a, %d %B")"
+	myDate="$(date +"%a, %d %B")"
 	echo "$myDate"
+}
+myTime() {
+	myTime="$(date +"%H:%M")"
+	echo "$myTime"
 }
 
 myBattery(){
@@ -19,7 +23,8 @@ myBattery(){
 
 NETNAME=$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $3}')
 NETBARS=$(nmcli dev wifi | grep -E '^[*]' | awk '/*/ {print $9}')
-WEATHER=" | $(curl wttr.in?format=1)"
+WET_STR="$(curl wttr.in?format=1)"
+WEATHER="  ${WET_STR:1}"
 
 if [[ $(nmcli radio wifi) == *"disabled"* ]]; then
 	NETNAME="WIFI"
@@ -31,8 +36,18 @@ fi
 
 
 #xsetroot -name " kybrd: $(checkIbusLang) | $(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))  | $(myDate) | Btry:$(myBattery)"
-vol="$(amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]')" 
-xsetroot -name " $NETNAME $NETBARS | $(checkIbusLang) | 🔈 $vol | $(myBattery) | $(myDate) $WEATHER"
+
+vol="$(amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]' | sed 's/.$//')"
+if [[ $vol -ge 65 ]]; then
+	vol_str=""
+elif [[ $vol -ge 1 ]]; then
+	vol_str=""
+else
+	vol_str=""
+fi 
+
+wet="${WEATHER:1}"
+xsetroot -name " $NETNAME $NETBARS      $(checkIbusLang)     $(ramPercent)%    $vol_str $vol%    $(myBattery)     $(myTime)     $(myDate)  $WEATHER"
 
 
 #expr length "$(nmcli dev wifi list)"
